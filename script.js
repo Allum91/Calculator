@@ -21,6 +21,14 @@
 //         3. IF the input already has a value -> append it to the end of the current value
 //         ... equals button
 
+let partOneSum
+let partTwoSum
+let activeOperator
+
+// find each equation for each symbol
+// set a function for each symbol
+// 
+
 additionFunction = (partOneSum, partTwoSum) => {
  return Number(partOneSum) + Number(partTwoSum)
 };
@@ -37,12 +45,8 @@ subtractFunction = (partOneSum, partTwoSum) => {
   return partOneSum - partTwoSum
 };
 
-
-
-
-let partOneSum
-let partTwoSum
-let activeOperator
+// set the equals sign to get both number values and do the equation
+// using a switchcase to go through each option
 
 document.getElementById("equals").addEventListener("click", (event) => {
   let bothNumbers = display.value.split(activeOperator)
@@ -62,14 +66,21 @@ document.getElementById("equals").addEventListener("click", (event) => {
       display.value = timesFunction(partOneSum, partTwoSum);
       console.log("this multiplies");
       break;
-    case "/":
+    case "÷":
       display.value = divideFunction(partOneSum, partTwoSum);
       console.log("this divides");
+      break;
+    case "%":
+      display.value = percentFunction(partOneSum, partTwoSum);
+      console.log("this finds percentage");
       break;
  
     
   }
 })
+
+//add event listener for each operator
+// console each one to make sure it returns the right equation
 
 document.getElementById("clear").addEventListener("click", (event) => {
   //set the input back to 0
@@ -92,9 +103,9 @@ document.getElementById("+").addEventListener("click", (event) => {
   display.value += event.target.id
 })
 
-document.getElementById("/").addEventListener("click", (event) => {
+document.getElementById("÷").addEventListener("click", (event) => {
   partOneSum = display.value
-  activeOperator = "/"
+  activeOperator = "÷"
   display.value += event.target.id
 })
 
@@ -110,6 +121,16 @@ document.getElementById("-").addEventListener("click", (event) => {
   display.value += event.target.id
 })
 
+document.getElementById("%").addEventListener("click", (event) => {
+  partOneSum = display.value
+  activeOperator = "%"
+  display.value += event.target.id
+})
+
+// Set a const for each number
+// set an event listener for each number
+// get the value for number
+// give it a value
 
 const decimal = document.getElementById("decimal")
 const zero = document.getElementById("zero")

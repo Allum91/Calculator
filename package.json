@@ -1,0 +1,23 @@
+{
+  "name": "calculator_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.dev.js",
+  "scripts": {
+    "e2e": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Allum91/Calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Allum91/Calculator/issues"
+  },
+  "homepage": "https://github.com/Allum91/Calculator#readme",
+  "devDependencies": {
+    "cypress": "^6.5.0"
+  }
+}
