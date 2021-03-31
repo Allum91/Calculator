@@ -1,11 +1,11 @@
-$primary-color: #5c5e5f;
-$secondary-color: #1fbada;
+$primary-color: #304A4E;
+$secondary-color: #55868C;
 
 body {
   
   margin: 0;
   padding: 0;
-
+  background: #CDD0BA;
 }
 
 #calculator {
@@ -23,6 +23,7 @@ body {
     
     #display {
       height: 75px;
+      width: 23vw;
       font-size: 50px;
       color: white;
       text-align: right;
@@ -30,14 +31,9 @@ body {
       background: $primary-color;
     }
 
-input {
-  width: 22vw;
-}
-
-#buttons{
+#buttons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
 }
 
     .clear__button {

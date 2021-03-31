@@ -45,6 +45,10 @@ subtractFunction = (partOneSum, partTwoSum) => {
   return partOneSum - partTwoSum
 };
 
+percentFunction = (partOneSum, partTwoSum) => {
+  return (partOneSum/100)*partTwoSum
+};
+
 // set the equals sign to get both number values and do the equation
 // using a switchcase to go through each option
 
