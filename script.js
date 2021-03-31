@@ -1,33 +1,7 @@
-// . User starts off typing numbers (e.g. 12 )
-//         1. Have 0-9 buttons and they need values (HTML buttons)
-//         3. onclick 0-9 buttons - trigger an event - addEventListener
-//         3. Get the value from the button (event.target.value)
-//         4. Value of the button goes into input box - document.getElementById .. set innerHTML - ... 
-//         6. IF the input already has a value -> append it to the end of the current value
-//         7. Store the value in a variable
-
-
-//         ... Have functions/operators (+ - * /) as buttons and they need values
-//         1. Onclick of the button
-//         2. add the "+" to the input box
-//         3. Keep a note of the operator which was clicked
-//         4. OPTION #1 - change the function which is run when the = is clicked 
-//                        (e.g. We click "+" this means the "=" needs to run a doAddition(param1,param2))
-//         ... HOPE the user puts in another number (e.g. 3)
-
-
-//         1. Onclick of the button
-//         2. add the number to the input box
-//         3. IF the input already has a value -> append it to the end of the current value
-//         ... equals button
 
 let partOneSum
 let partTwoSum
 let activeOperator
-
-// find each equation for each symbol
-// set a function for each symbol
-// 
 
 additionFunction = (partOneSum, partTwoSum) => {
  return Number(partOneSum) + Number(partTwoSum)
@@ -48,9 +22,6 @@ subtractFunction = (partOneSum, partTwoSum) => {
 percentFunction = (partOneSum, partTwoSum) => {
   return (partOneSum/100)*partTwoSum
 };
-
-// set the equals sign to get both number values and do the equation
-// using a switchcase to go through each option
 
 document.getElementById("equals").addEventListener("click", (event) => {
   let bothNumbers = display.value.split(activeOperator)
@@ -78,63 +49,57 @@ document.getElementById("equals").addEventListener("click", (event) => {
       display.value = percentFunction(partOneSum, partTwoSum);
       console.log("this finds percentage");
       break;
- 
-    
   }
 })
 
-//add event listener for each operator
-// console each one to make sure it returns the right equation
+const percent = document.getElementById("%")
+const minus = document.getElementById("-")
+const multiply = document.getElementById("x")
+const divide = document.getElementById("÷")
+const add = document.getElementById("+")
+const del = document.getElementById("del")
+const clear = document.getElementById("clear")
 
-document.getElementById("clear").addEventListener("click", (event) => {
-  //set the input back to 0
+clear.addEventListener("click", (event) => {
  document.getElementById("display").value = 0
 
 })
 
-document.getElementById("del").addEventListener("click", (event) => {
-  // i want the button to remove the last number entered
-  // it being stored in display.value in the input
-  // find out how to remove last character of a string
- 
+del.addEventListener("click", (event) => {
   display.value = display.value.slice(0, -1);
 })
 
-document.getElementById("+").addEventListener("click", (event) => {
+add.addEventListener('click', (event) => {
   partOneSum = display.value
   activeOperator = "+"
   console.log("this works", display.value);
   display.value += event.target.id
 })
 
-document.getElementById("÷").addEventListener("click", (event) => {
+divide.addEventListener("click", (event) => {
   partOneSum = display.value
   activeOperator = "÷"
   display.value += event.target.id
 })
 
-document.getElementById("x").addEventListener("click", (event) => {
+multiply.addEventListener("click", (event) => {
   partOneSum = display.value
   activeOperator = "x"
   display.value += event.target.id
 })
 
-document.getElementById("-").addEventListener("click", (event) => {
+minus.addEventListener("click", (event) => {
   partOneSum = display.value
   activeOperator = "-"
   display.value += event.target.id
 })
 
-document.getElementById("%").addEventListener("click", (event) => {
+percent.addEventListener("click", (event) => {
   partOneSum = display.value
   activeOperator = "%"
   display.value += event.target.id
 })
 
-// Set a const for each number
-// set an event listener for each number
-// get the value for number
-// give it a value
 
 const decimal = document.getElementById("decimal")
 const zero = document.getElementById("zero")
